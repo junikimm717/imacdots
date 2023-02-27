@@ -68,7 +68,7 @@ yabai -m rule --add app="^Notability$" manage=off space=3
 yabai -m rule --add app="^NordVPN$" space=3 manage=off
 yabai -m rule --add app="^Code$" space=3
 yabai -m rule --add app="^VSCodium$" space=3
-yabai -m rule --add app="Sublime Text" space=3
+yabai -m rule --add app="Sublime Text" space=3 manage=off
 yabai -m rule --add app="^IntelliJ IDEA Ultimate$" space=3
 yabai -m rule --add app="^PyCharm Professional$" space=3
 yabai -m rule --add app="^Calendar$" space=3
@@ -87,6 +87,7 @@ yabai -m rule --add app="^FaceTime$" space=4
 yabai -m rule --add app="^Signal$" space=4
 yabai -m rule --add app="^WhatsApp Desktop$" space=4
 yabai -m rule --add app="^Slack$" space=4
+yabai -m rule --add app="^Adobe Connect$" space=4
 
 # virtualization
 yabai -m rule --add app="VMware" manage=off space=5
@@ -100,6 +101,7 @@ yabai -m rule --add app="Podcasts" manage=on space=6
 yabai -m rule --add app="^System Settings$" manage=off space=7
 
 # video
-yabai -m rule --add app="OBS|VLC|GOM" manage=off space=8
+yabai -m rule --add app="OBS" manage=off space=8
+yabai -m rule --add app="^Photo Booth$" manage=off space=8
 
 echo "yabai configuration loaded.."
