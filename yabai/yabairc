@@ -1,0 +1,105 @@
+#!/usr/bin/env sh
+
+# the scripting-addition must be loaded manually if
+# you are running yabai on macOS Big Sur. Uncomment
+# the following line to have the injection performed
+# when the config is executed during startup.
+#
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+#
+# see this wiki page for information:
+#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+#
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# global settings
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse          off
+yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+yabai -m config window_shadow                off
+yabai -m config window_opacity               on
+yabai -m config window_opacity_duration      0.0
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.90
+yabai -m config window_border                on
+yabai -m config window_border_width          2
+#yabai -m config active_window_border_color   0xff775759
+#yabai -m config normal_window_border_color   0xff555555
+yabai -m config active_window_border_color   0xffcec0af
+yabai -m config normal_window_border_color   0xff444444
+
+yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 off
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  12
+yabai -m config bottom_padding               50
+yabai -m config left_padding                 12
+yabai -m config right_padding                12
+yabai -m config window_gap                   12
+
+yabai -m config --space 5 layout             float
+yabai -m config --space 7 layout             float
+yabai -m config --space 9 layout             float
+
+# terminal
+yabai -m rule --add app="^Alacritty$" space=1
+yabai -m rule --add app="^kitty$" space=1
+yabai -m rule --add app="^iTerm$" space=1
+yabai -m rule --add app="^Terminal$" space=1
+yabai -m rule --add app="^Hyper$" space=1
+
+# web browser
+yabai -m rule --add app="^Brave Browser$" space=2
+yabai -m rule --add app="^Firefox$" space=2
+yabai -m rule --add app="^Tor Browser$" space=2
+
+# productivity/programming tools
+yabai -m rule --add app="^Notability$" manage=off space=3
+yabai -m rule --add app="^NordVPN$" space=3 manage=off
+yabai -m rule --add app="^Code$" space=3
+yabai -m rule --add app="^VSCodium$" space=3
+yabai -m rule --add app="Sublime Text" space=3
+yabai -m rule --add app="^IntelliJ IDEA Ultimate$" space=3
+yabai -m rule --add app="^PyCharm Professional$" space=3
+yabai -m rule --add app="^Calendar$" space=3
+yabai -m rule --add app="^Reminders$" space=3
+yabai -m rule --add app="^Emacs$" space=3 manage=on
+yabai -m rule --add app="^VimR$" space=3 manage=on
+yabai -m rule --add app="^XCode$" space=3 manage=off
+yabai -m rule --add app="^Kindle$" space=3
+
+# social media/communication
+yabai -m rule --add app="^Skype$" space=4
+yabai -m rule --add app="^Discord$" space=4
+yabai -m rule --add app="^Messages$" space=4
+yabai -m rule --add app="zoom" manage=off space=4
+yabai -m rule --add app="^FaceTime$" space=4
+yabai -m rule --add app="^Signal$" space=4
+yabai -m rule --add app="^WhatsApp Desktop$" space=4
+yabai -m rule --add app="^Slack$" space=4
+
+# virtualization
+yabai -m rule --add app="VMware" manage=off space=5
+
+# music applications
+yabai -m rule --add app="YouTube Music" manage=on space=6
+yabai -m rule --add app="Music" manage=on space=6
+yabai -m rule --add app="Podcasts" manage=on space=6
+
+# settings
+yabai -m rule --add app="^System Settings$" manage=off space=7
+
+# video
+yabai -m rule --add app="OBS|VLC|GOM" manage=off space=8
+
+echo "yabai configuration loaded.."

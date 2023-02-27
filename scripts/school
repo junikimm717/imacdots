@@ -1,0 +1,4 @@
+#!/bin/sh
+
+X=$(find "/Users/junikim/ohsg10/s2" -type d | fzf)
+cd $X
