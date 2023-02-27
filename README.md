@@ -1,5 +1,7 @@
 # Juni's iMac Dotfiles
 
-![screenshot](./assets/screenshot.png)
+![screenshot](screenshot.png)
 
 With yabai, skhd, and sketchybar. SIP has been completely disabled.
+
+Dotfiles managed with stow.
