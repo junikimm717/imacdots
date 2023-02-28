@@ -156,6 +156,8 @@ shift + alt - c : yabai -m window --toggle float;\
 shift + alt - space : yabai -m window --toggle float
 alt - f         : yabai -m window --toggle zoom-fullscreen
 
+cmd - space : open -a "Raycast"
+
 shift + alt - h : yabai -m window --warp west
 shift + alt - j : yabai -m window --warp south
 shift + alt - k : yabai -m window --warp north
