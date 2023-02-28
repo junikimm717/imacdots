@@ -192,7 +192,10 @@ reset-cursor() {
 }
 
 alias ldd='otool -L'
-alias z='zathura --fork'
+z() {
+  zathura --fork $@ > /dev/null 2>&1 
+}
+
 alias mp='ncmpcpp'
 
 lf () {
