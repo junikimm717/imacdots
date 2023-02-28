@@ -1,8 +1,15 @@
 #!/bin/bash
 
+# this script assumes a single user installation!
+
+command -V yabai > /dev/null || exit 1
+
+YABAI="$(which yabai)"
+
 # calculate new hash for the binary
-SHA256=$(shasum -a 256 /usr/local/bin/yabai | cut -d' ' -f 1)
+SHA256=$(shasum -a 256 "$YABAI" | cut -d' ' -f 1)
 echo "New yabai hash: $SHA256"
 
 # replace the hash in-place in the sudoers file
-sudo sed -i '' -e 's/sha256:[[:alnum:]]*/sha256:'${SHA256}'/' /private/etc/sudoers.d/yabai
+#sudo sed -i '' -e 's/sha256:[[:alnum:]]*/sha256:'${SHA256}'/' /private/etc/sudoers.d/yabai || (echo "failed" && exit 1)
+(echo "$(whoami) ALL=(root) NOPASSWD: sha256:${SHA256} ${YABAI} --load-sa" | sudo tee /private/etc/sudoers.d/yabai)  || (echo "failed" && exit 1)
