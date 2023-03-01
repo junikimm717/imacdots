@@ -115,7 +115,7 @@ f() {
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
 }
 mkcd() {
-    mkdir $1 && cd $1
+    mkdir -p $1 && cd $1
 }
 gpl() {
   curl https://www.gnu.org/licenses/gpl-3.0.md -o LICENSE.md

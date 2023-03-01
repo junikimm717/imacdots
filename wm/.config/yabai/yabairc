@@ -39,7 +39,7 @@ yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
-yabai -m config window_animation_duration    0.1
+yabai -m config window_animation_duration    0.0
 
 # general space settings
 yabai -m config layout                       bsp

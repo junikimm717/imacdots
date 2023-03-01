@@ -2,6 +2,7 @@
 
 ![screenshot](screenshot.png)
 
-With yabai, skhd, and sketchybar. SIP has been completely disabled.
+Dotfiles managed with stow. With yabai, skhd, and sketchybar.
 
-Dotfiles managed with stow.
+SIP needs to be completely disabled, and some annoying stuff in settings also
+needs to be tweaked.
