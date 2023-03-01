@@ -173,6 +173,7 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/Users/junikim/ohsg10/bin:$PATH"
 export MKTEX_HOOK="/Users/junikim/ohsg10/bin/stupdate"
 alias trc='texbld run compile'
+alias tb='texbld build'
 
 export PATH=/Users/junikim/Library/Application\ Support/texbld/bin:$PATH
 
