@@ -11,7 +11,7 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"prettier.useEditorConfig": false,
 	"python.showStartPage": false,
-	"editor.fontFamily": "Fira Code",
+	"editor.fontFamily": "JetBrainsMono Nerd Font Mono",
 	"editor.fontLigatures": true,
 	"editor.tabSize": 2,
 	"typescript.updateImportsOnFileMove.enabled": "always",
@@ -33,5 +33,9 @@
 	"svelte.enable-ts-plugin": true,
 	"workbench.startupEditor": "none",
 	"workbench.colorTheme": "Tokyo Night",
-	"svelte.plugin.svelte.note-new-transformation": false
+	"editor.fontSize": 14,
+	"terminal.external.osxExec": "Alacritty.app",
+	"terminal.integrated.fontSize": 14,
+	"terminal.external.linuxExec": "alacritty",
+	"editor.cursorStyle": "block"
 }
