@@ -8,7 +8,7 @@ set pages-per-row 1
 set scroll-page-aware "true"
 set smooth-scroll "true"
 set scroll-full-overlap 0.01
-set scroll-step 15
+set scroll-step 50
 
 set recolor
 
