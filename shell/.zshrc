@@ -175,6 +175,10 @@ export MKTEX_HOOK="/Users/junikim/ohsg10/bin/stupdate"
 alias trc='texbld run compile'
 alias tb='texbld build'
 
+alias tgp='texbld g p github:junikimm717/texbld-templates'
+alias tgpe='texbld g p github:junikimm717/texbld-templates#essay.toml'
+alias tgpp='texbld g p github:junikimm717/texbld-templates#physics.toml'
+
 export PATH=/Users/junikim/Library/Application\ Support/texbld/bin:$PATH
 
 export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:$PATH

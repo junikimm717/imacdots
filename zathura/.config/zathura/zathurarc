@@ -10,6 +10,6 @@ set smooth-scroll "true"
 set scroll-full-overlap 0.01
 set scroll-step 50
 
-set recolor
+#set recolor
 
 set font "JetBrainsMono Nerd Font Mono 15"
