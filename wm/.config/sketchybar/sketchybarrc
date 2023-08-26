@@ -26,9 +26,9 @@ sketchybar --bar height=32        \
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
 
-sketchybar --default icon.font="JetBrainsMono Nerd Font Mono:Bold:17.0"  \
+sketchybar --default icon.font="JetBrainsMonoNL Nerd Font Mono:Bold:18.0"  \
                      icon.color=0xffcdd6f4                 \
-                     label.font="JetBrainsMono Nerd Font Mono:17.0" \
+                     label.font="JetBrainsMonoNL Nerd Font Mono:18.0" \
                      label.color=0xffcdd6f4                \
                      padding_left=5                        \
                      padding_right=5                       \
@@ -43,7 +43,7 @@ sketchybar --default icon.font="JetBrainsMono Nerd Font Mono:Bold:17.0"  \
 # to indicate active and available mission control spaces
 
 SPACE_ICONS=("1" "2" "3" "4" "5")
-SPACE_ICONS=("" "" "" "" "" "♪" "" "" "9")
+SPACE_ICONS=("" "" "" "󰀑" "󰍹" "♪" "" "󰙯" "")
 
 
 for i in "${!SPACE_ICONS[@]}"
@@ -89,12 +89,12 @@ sketchybar --add item space_separator left                         \
 
 sketchybar --add item clock right                              \
            --set clock   update_freq=10                        \
-                         icon=                                \
+                         icon=                                \
                          script="$PLUGIN_DIR/clock.sh"         \
                                                                \
            --add item wifi right                               \
            --set wifi    script="$PLUGIN_DIR/wifi.sh"          \
-                         icon=直                               \
+                         icon=󰖩                               \
            --subscribe wifi wifi_change                        \
                                                                \
            --add item volume right                             \

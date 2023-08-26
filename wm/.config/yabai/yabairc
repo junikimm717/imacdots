@@ -82,7 +82,6 @@ yabai -m rule --add app="^Kindle$" space=3
 
 # social media/communication
 yabai -m rule --add app="^Skype$" space=4
-yabai -m rule --add app="^Discord$" space=4
 yabai -m rule --add app="^Messages$" space=4
 yabai -m rule --add app="zoom" manage=off space=4 border=off
 yabai -m rule --add app="^FaceTime$" space=4
@@ -102,8 +101,10 @@ yabai -m rule --add app="Podcasts" manage=on space=6
 # settings
 yabai -m rule --add app="^System Settings$" manage=off space=7
 
+yabai -m rule --add app="^Discord$" space=8
+
 # video
-yabai -m rule --add app="OBS" manage=off space=8
-yabai -m rule --add app="^Photo Booth$" manage=off space=8
+yabai -m rule --add app="OBS" manage=off space=9
+yabai -m rule --add app="^Photo Booth$" manage=off space=9
 
 echo "yabai configuration loaded.."

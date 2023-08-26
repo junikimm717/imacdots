@@ -159,7 +159,7 @@ if ! test -z "$X"; then
 fi
 }
 
-bindkey -s "^f" "~/.local/bin/tmuxs\n"
+bindkey -s "^f" "~/.local/bin/tmuxs -d 3\n"
 
 # sources the configurations for this project.
 export PATH=/Users/junikim/Documents/jhjung/meet:$PATH
@@ -170,7 +170,7 @@ alias r="source ranger"
 alias vc='nvim ~/.config/nvim'
 export MT_EDITOR=nvim
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/Users/junikim/ohsg10/bin:$PATH"
+export PATH="/Users/junikim/ohsg12/bin:$PATH"
 export MKTEX_HOOK="/Users/junikim/ohsg10/bin/stupdate"
 alias trc='texbld run compile'
 alias tb='texbld build'
