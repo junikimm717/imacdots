@@ -45,7 +45,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.98
+  opacity: 0.9
   # opacity: 0.80
   decorations: none
   # Window decorations
@@ -189,7 +189,7 @@ font:
 
   # Point size
   #size: 13.0
-  size: 14.0
+  size: 18.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -679,8 +679,8 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-#colors: *gruvbox_material
-colors: *catppuccin
+colors: *GruvboxDark
+  #colors: *catppuccin
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

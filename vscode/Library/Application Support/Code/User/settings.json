@@ -6,7 +6,6 @@
 	"python.languageServer": "Pylance",
 	"prettier.jsxSingleQuote": true,
 	"prettier.singleQuote": true,
-	"editor.formatOnSave": true,
 	"prettier.useTabs": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"prettier.useEditorConfig": false,
@@ -32,10 +31,11 @@
 	"vsicons.dontShowNewVersionMessage": true,
 	"svelte.enable-ts-plugin": true,
 	"workbench.startupEditor": "none",
-	"workbench.colorTheme": "Tokyo Night",
 	"editor.fontSize": 14,
 	"terminal.external.osxExec": "Alacritty.app",
 	"terminal.integrated.fontSize": 14,
 	"terminal.external.linuxExec": "alacritty",
-	"editor.cursorStyle": "block"
+	"editor.cursorStyle": "block",
+	"git.confirmSync": false,
+	"workbench.colorTheme": "Tokyo Night"
 }

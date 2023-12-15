@@ -177,6 +177,7 @@ alt - e : /usr/local/bin/mt
 shift + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty -e "tmux" &disown
 shift + alt - a : /Applications/Alacritty.app/Contents/MacOS/alacritty &disown
 shift + alt - w : open -a "Brave Browser" -n --args --new-window
+shift + alt - f : open -a "ForkLift"
 
 shift + alt - 1 : yabai -m window --space 1
 shift + alt - 2 : yabai -m window --space 2
@@ -197,5 +198,7 @@ alt - 6 : yabai -m space --focus 6
 alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
+ctrl - right: yabai -m space --focus next
+ctrl - left: yabai -m space --focus prev
 
 shift + alt - q : skhd --key "cmd - w"

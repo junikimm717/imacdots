@@ -179,6 +179,9 @@ alias tgp='texbld g p github:junikimm717/texbld-templates'
 alias tgpe='texbld g p github:junikimm717/texbld-templates#essay.toml'
 alias tgpp='texbld g p github:junikimm717/texbld-templates#physics.toml'
 
+alias vy='nvim ~/.config/yabai/yabairc'
+alias vs='nvim ~/.config/skhd/skhdrc'
+
 export PATH=/Users/junikim/Library/Application\ Support/texbld/bin:$PATH
 
 export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:$PATH
@@ -198,7 +201,9 @@ reset-cursor() {
 
 alias ldd='otool -L'
 z() {
-  zathura --fork $@ > /dev/null 2>&1 
+  # apparently the update broke the forking api sadge
+  #zathura --fork $@ > /dev/null 2>&1
+  zathura $@ > /dev/null 2>&1 &disown
 }
 
 alias mp='ncmpcpp'
@@ -225,3 +230,7 @@ if [[ "$(command -v nvim)" ]]; then
 fi
 
 #export PS1="$(reset-cursor)$PS1"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

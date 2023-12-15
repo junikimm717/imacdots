@@ -4,3 +4,4 @@
 [submodule "editors/.config/nvim"]
 	path = editors/.config/nvim
 	url = https://git.junickim.me/junikimm717/nvim2023
+	branch = imac
