@@ -13,12 +13,15 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar height=32        \
+sketchybar --bar height=38        \
                  blur_radius=30   \
-                 position=bottom     \
+                 position=top     \
                  sticky=off       \
-                 padding_left=10  \
-                 padding_right=10 \
+                 padding_left=5  \
+                 padding_right=5 \
+                 margin=10  \
+                 y_offset=10 \
+                 corner_radius=5\
                  color=0xff1e1e2e
 
 ##### Changing Defaults #####
@@ -28,7 +31,7 @@ sketchybar --bar height=32        \
 
 sketchybar --default icon.font="JetBrainsMonoNL Nerd Font Mono:Bold:18.0"  \
                      icon.color=0xffcdd6f4                 \
-                     label.font="JetBrainsMonoNL Nerd Font Mono:18.0" \
+                     label.font="JetBrainsMonoNL Nerd Font Mono:Bold:16.0" \
                      label.color=0xffcdd6f4                \
                      padding_left=5                        \
                      padding_right=5                       \
@@ -42,7 +45,6 @@ sketchybar --default icon.font="JetBrainsMonoNL Nerd Font Mono:Bold:18.0"  \
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces
 
-SPACE_ICONS=("1" "2" "3" "4" "5")
 SPACE_ICONS=("" "" "" "󰀑" "󰍹" "♪" "" "󰙯" "")
 
 
@@ -52,9 +54,14 @@ do
   sketchybar --add space space.$sid left                                 \
              --set space.$sid associated_space=$sid                      \
                               icon="${SPACE_ICONS[i]}"                     \
-                              background.color=0x44ffffff                \
+                              background.border_color=0xfff38ba8                \
+                              background.border_width=2                \
                               background.corner_radius=5                 \
-                              background.height=20                       \
+                              padding_left=2                        \
+                              padding_right=2                       \
+                              background.height=30                       \
+                              icon.padding_left=8                   \
+                              icon.padding_right=8\
                               background.drawing=off                     \
                               label.drawing=off                          \
                               script="$PLUGIN_DIR/space.sh"              \
@@ -81,33 +88,68 @@ sketchybar --add item space_separator left                         \
 # Additional position (e.g. center) are available, see:
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
 
+## Right Item Defaults
+
+sketchybar --default \
+                     label.padding_left=6                  \
+                     label.padding_right=6                 \
+                     icon.padding_left=10                   \
+                     icon.padding_right=10\
+                     icon.background.border_color=0xffffffff\
+                     icon.background.border_width=2\
+                     icon.background.color=0xffffffff\
+                     icon.color=0xff000000\
+                     icon.background.drawing=on\
+                     icon.background.height=30\
+                     icon.background.corner_radius=5\
+                     label.background.border_color=0xffffffff\
+                     label.background.border_width=2\
+                     label.background.drawing=on\
+                     label.background.height=30\
+                     label.background.corner_radius=5\
+
 # Some items refresh on a fixed cycle, e.g. the clock runs its script once
 # every 10s. Other items respond to events they subscribe to, e.g. the
 # volume.sh script is only executed once an actual change in system audio
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
+
 sketchybar --add item clock right                              \
            --set clock   update_freq=10                        \
                          icon=                                \
                          script="$PLUGIN_DIR/clock.sh"         \
+                         icon.background.color=0xffa6e3a1      \
+                         icon.background.border_color=0xffa6e3a1      \
+                         label.background.border_color=0xffa6e3a1\
                                                                \
            --add item wifi right                               \
            --set wifi    script="$PLUGIN_DIR/wifi.sh"          \
-                         icon=󰖩                               \
+                         icon=󰖩                                \
+                         icon.background.color=0xfff9e2af      \
+                         icon.background.border_color=0xfff9e2af      \
+                         label.background.border_color=0xfff9e2af\
            --subscribe wifi wifi_change                        \
                                                                \
            --add item volume right                             \
            --set volume  script="$PLUGIN_DIR/volume.sh"        \
+                         icon.background.color=0xff89b4fa      \
+                         icon.background.border_color=0xff89b4fa      \
+                         label.background.border_color=0xff89b4fa\
            --subscribe volume volume_change                    \
                                                                \
            --add item battery right                            \
            --set battery script="$PLUGIN_DIR/battery.sh"       \
                          update_freq=120                       \
+                         icon.background.color=0xfff5c2e7      \
+                         icon.background.border_color=0xfff5c2e7      \
+                         label.background.border_color=0xfff5c2e7\
            --subscribe battery system_woke power_source_change
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to
 # force all scripts to run the first time, it should never be run in an item script.
+
+sketchybar --hotload on
 
 sketchybar --update
