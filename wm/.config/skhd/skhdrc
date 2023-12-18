@@ -198,4 +198,6 @@ alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
 
+alt - r : sketchybar --reload
+
 shift + alt - q : skhd --key "cmd - w"
