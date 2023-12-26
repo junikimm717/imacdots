@@ -78,7 +78,7 @@ yabai -m rule --add app="^Kindle$" space=3
 # social media/communication
 yabai -m rule --add app="^Skype$" space=4
 yabai -m rule --add app="^Messages$" space=4
-yabai -m rule --add app="zoom" manage=off space=4 border=off
+yabai -m rule --add app="zoom" manage=off space=4
 yabai -m rule --add app="^FaceTime$" space=4
 yabai -m rule --add app="^Signal$" space=4
 yabai -m rule --add app="^WhatsApp Desktop$" space=4
