@@ -25,7 +25,7 @@
 		"editor.suggest.snippetsPreventQuickSuggestions": false,
 		"editor.suggestSelection": "first",
 		"editor.tabCompletion": "onlySnippets",
-		"editor.wordBasedSuggestions": false
+		"editor.wordBasedSuggestions": "off"
 	},
 	"workbench.iconTheme": "vscode-icons",
 	"vsicons.dontShowNewVersionMessage": true,
@@ -37,5 +37,5 @@
 	"terminal.external.linuxExec": "alacritty",
 	"editor.cursorStyle": "block",
 	"git.confirmSync": false,
-	"workbench.colorTheme": "Tokyo Night"
+	"workbench.colorTheme": "Gruvbox Dark Medium"
 }

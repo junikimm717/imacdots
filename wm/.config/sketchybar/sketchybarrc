@@ -31,7 +31,7 @@ sketchybar --bar height=40        \
 
 sketchybar --default icon.font="JetBrainsMonoNL Nerd Font Mono:Bold:23.0"  \
                      icon.color=0xffcdd6f4                 \
-                     label.font="JetBrainsMonoNL Nerd Font Mono:Bold:20.0" \
+                     label.font="JetBrainsMonoNL Nerd Font Mono:Semibold:20.0" \
                      label.color=0xffcdd6f4                \
                      padding_left=2                        \
                      padding_right=2                       \
@@ -85,6 +85,8 @@ sketchybar --add item front_app center                             \
 # Additional position (e.g. center) are available, see:
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
 
+sketchybar --add event wmmode
+
 # Some items refresh on a fixed cycle, e.g. the clock runs its script once
 # every 10s. Other items respond to events they subscribe to, e.g. the
 # volume.sh script is only executed once an actual change in system audio
@@ -94,7 +96,6 @@ sketchybar --add item front_app center                             \
 sketchybar --add item clock right                              \
            --set clock   update_freq=10                        \
                          script="$PLUGIN_DIR/clock.sh"         \
-                         icon.drawing=off\
                          label.padding_left=10\
                          label.padding_right=10\
                          background.color=0xff383838\
@@ -125,7 +126,7 @@ sketchybar --add item wifi_label right                         \
                                  background.border_width=0\
                                  icon.color=0xff282828
 
- sketchybar --add item volume right                             \
+sketchybar --add item volume right                             \
            --set volume  script="$PLUGIN_DIR/volume.sh"        \
                                  icon.drawing=off\
                                  background.color=0xff458588\
@@ -138,7 +139,7 @@ sketchybar --add item wifi_label right                         \
                                   background.border_color=0xff458588\
            --subscribe volume volume_change                    \
 
- sketchybar --add item volume_icon right                             \
+sketchybar --add item volume_icon right                             \
            --set volume_icon  script="$PLUGIN_DIR/volume_icon.sh"        \
                          label.drawing=off\
                          label.padding_left=10\
@@ -146,6 +147,25 @@ sketchybar --add item wifi_label right                         \
                          background.color=0xff458588\
                          icon.color=0xff282828\
            --subscribe volume_icon volume_change                    \
+
+
+sketchybar  --add item wm right                               \
+           --set wm    script="$PLUGIN_DIR/wm.sh"          \
+                         icon.drawing=off\
+                         label.padding_left=10\
+                         label.padding_right=10\
+                         background.color=0xff383838\
+                         background.border_width=2\
+                         background.border_color=0xfffb4934\
+           --subscribe wm space_change\
+           --subscribe wm wmmode\
+
+sketchybar --add item wm_icon right                         \
+           --set wm_icon icon=󱂬                            \
+                                 label.drawing=off\
+                                 background.color=0xfffb4934\
+                                 background.border_width=0\
+                                 icon.color=0xff282828
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to
