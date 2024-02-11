@@ -184,7 +184,7 @@ alt - return : yabai -m window --stack stack.first && yabai -m window --focus st
 alt - e : /usr/local/bin/mt
 shift + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty -e "tmux" &disown
 shift + alt - a : /Applications/Alacritty.app/Contents/MacOS/alacritty &disown
-shift + alt - w : open -a "Brave Browser" -n --args --new-window
+shift + alt - w : open -a "Firefox" -n --args --new-window
 
 shift + alt - 1 : yabai -m window --space 1
 shift + alt - 2 : yabai -m window --space 2
