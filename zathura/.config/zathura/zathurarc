@@ -1,4 +1,4 @@
-include catppuccin-mocha
+include gruvbox-dark
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
 set selection-clipboard clipboard

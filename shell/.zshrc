@@ -181,6 +181,8 @@ alias tgpp='texbld g p github:junikimm717/texbld-templates#physics.toml'
 
 alias vy='nvim ~/.config/yabai/yabairc'
 alias vs='nvim ~/.config/skhd/skhdrc'
+alias lpp='latexmk -pdf -pvc'
+alias latexmkrc='curl -LJ https://mit.junic.kim/latexmkrc.pl -o .latexmkrc'
 
 export PATH=/Users/junikim/Library/Application\ Support/texbld/bin:$PATH
 
