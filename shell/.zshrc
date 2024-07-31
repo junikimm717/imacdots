@@ -110,10 +110,6 @@ v() {
 e() {
     exit $@
 }
-f() {
-    fff "$@"
-    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
-}
 mkcd() {
     mkdir -p $1 && cd $1
 }
@@ -152,41 +148,16 @@ prompt_tmux() {
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 set -o vi
 
-school() {
-X=$(find "/Users/junikim/ohsg11/s2" -type d | fzf)
-if ! test -z "$X"; then
-  cd $X
-fi
-}
-
 bindkey -s "^f" "~/.local/bin/tmuxs -d 3\n"
 
 # sources the configurations for this project.
-export PATH=/Users/junikim/Documents/jhjung/meet:$PATH
-
-source ~/perl5/perlbrew/etc/bashrc
-source "/Users/junikim/Documents/projects/perl/vrepl/env/env.sh"
-alias r="source ranger"
 alias vc='nvim ~/.config/nvim'
-export MT_EDITOR=nvim
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/Users/junikim/ohsg12/bin:$PATH"
-export MKTEX_HOOK="/Users/junikim/ohsg10/bin/stupdate"
-alias trc='texbld run compile'
-alias tb='texbld build'
-
-alias tgp='texbld g p github:junikimm717/texbld-templates'
-alias tgpe='texbld g p github:junikimm717/texbld-templates#essay.toml'
-alias tgpp='texbld g p github:junikimm717/texbld-templates#physics.toml'
 
 alias vy='nvim ~/.config/yabai/yabairc'
 alias vs='nvim ~/.config/skhd/skhdrc'
 alias lpp='latexmk -pdf -pvc'
 alias latexmkrc='curl -LJ https://mit.junic.kim/latexmkrc.pl -o .latexmkrc'
 
-export PATH=/Users/junikim/Library/Application\ Support/texbld/bin:$PATH
-
-export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 
  if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
@@ -232,7 +203,3 @@ if [[ "$(command -v nvim)" ]]; then
 fi
 
 #export PS1="$(reset-cursor)$PS1"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

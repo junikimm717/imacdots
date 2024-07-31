@@ -1,7 +1,3 @@
 [submodule "shell/.tmux/plugins/tpm"]
 	path = shell/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "editors/.config/nvim"]
-	path = editors/.config/nvim
-	url = https://git.junickim.me/junikimm717/nvim2023
-	branch = imac
