@@ -202,4 +202,7 @@ if [[ "$(command -v nvim)" ]]; then
     export MANWIDTH=999
 fi
 
+export WORKSPACES=$WORKSPACES:$HOME/mit/s1:$HOME/Documents/proj:$HOME/Documents/work:$HOME/.config/nvim
+export PATH=$HOME/Library/Application\ Support/texbld/bin:$PATH
+
 #export PS1="$(reset-cursor)$PS1"

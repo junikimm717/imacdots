@@ -1,14 +1,12 @@
-[colors.primary]
-background = "#1E1E2E"
-bright_foreground = "#CDD6F4"
-dim_foreground = "#CDD6F4"
-foreground = "#CDD6F4"
+import = [
+    "~/.config/alacritty/gruvbox.toml"
+]
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-size = 18.0
+size = 16.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
