@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=$HOME/.local/bin:$HOME/Documents/projects/mktex:$HOME/.emacs.d/bin:$PATH
 ZSH_DISABLE_COMPFIX=true
 
