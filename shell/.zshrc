@@ -75,7 +75,7 @@ ZSH_THEME="edvardm"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git asdf zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -149,7 +149,7 @@ prompt_tmux() {
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 set -o vi
 
-bindkey -s "^f" "~/.local/bin/tmuxs -d 3\n"
+bindkey -s "^f" "tmuxs -d 3\n"
 
 # sources the configurations for this project.
 alias vc='nvim ~/.config/nvim'
@@ -203,7 +203,7 @@ if [[ "$(command -v nvim)" ]]; then
     export MANWIDTH=999
 fi
 
-export WORKSPACES=$WORKSPACES:$HOME/mit/s1:$HOME/Documents/proj:$HOME/Documents/work:$HOME/.config/nvim
+export WORKSPACES=$WORKSPACES:$HOME/mit/s2:$HOME/Documents/proj:$HOME/Documents/work:$HOME/.config/nvim
 export PATH=$HOME/Library/Application\ Support/texbld/bin:$PATH
 
 #export PS1="$(reset-cursor)$PS1"
