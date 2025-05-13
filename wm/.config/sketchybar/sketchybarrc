@@ -13,6 +13,8 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
+sketchybar --add event aerospace_workspace_change
+
 sketchybar --bar height=40        \
                  blur_radius=30   \
                  position=bottom     \
@@ -60,14 +62,14 @@ SPACE_ICONS=("" "" "" "󰀑" "󰒋" "♪" "" "󰙯" "")
 for i in "${!SPACE_ICONS[@]}"
 do
   sid=$(($i+1))
-  sketchybar --add space space.$sid left                                 \
-             --set space.$sid associated_space=$sid                      \
-                              icon="${SPACE_ICONS[i]}"                     \
-                              background.drawing=on                     \
-                              label.drawing=off                          \
-                              script="$PLUGIN_DIR/space.sh"              \
-                              click_script="yabai -m space --focus $sid"\
-
+  sketchybar --add item space.$sid left\
+             --subscribe space.$sid aerospace_workspace_change\
+             --set space.$sid\
+             icon="${SPACE_ICONS[i]}"\
+             background.drawing=on\
+             label.drawing=off\
+             script="$PLUGIN_DIR/space.sh $sid"\
+             click_script="aerospace workspace $sid"
 done
 
 ##### Adding Left Items #####
@@ -149,23 +151,24 @@ sketchybar --add item volume_icon right                             \
            --subscribe volume_icon volume_change                    \
 
 
-sketchybar  --add item wm right                               \
-           --set wm    script="$PLUGIN_DIR/wm.sh"          \
-                         icon.drawing=off\
-                         label.padding_left=10\
-                         label.padding_right=10\
-                         background.color=0xff383838\
-                         background.border_width=2\
-                         background.border_color=0xfffb4934\
-           --subscribe wm space_change\
-           --subscribe wm wmmode\
-
-sketchybar --add item wm_icon right                         \
-           --set wm_icon icon=󱂬                            \
-                                 label.drawing=off\
-                                 background.color=0xfffb4934\
-                                 background.border_width=0\
-                                 icon.color=0xff282828
+# command out until aerospace actually supports this event.
+# sketchybar  --add item wm right                               \
+#            --set wm    script="$PLUGIN_DIR/wm.sh"          \
+#                          icon.drawing=off\
+#                          label.padding_left=10\
+#                          label.padding_right=10\
+#                          background.color=0xff383838\
+#                          background.border_width=2\
+#                          background.border_color=0xfffb4934\
+#            --subscribe wm space_change\
+#            --subscribe wm wmmode\
+# 
+# sketchybar --add item wm_icon right                         \
+#            --set wm_icon icon=󱂬                            \
+#                                  label.drawing=off\
+#                                  background.color=0xfffb4934\
+#                                  background.border_width=0\
+#                                  icon.color=0xff282828
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to

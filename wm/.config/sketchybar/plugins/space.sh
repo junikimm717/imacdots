@@ -8,10 +8,13 @@ COLOR="0xffcdd6f4"
 BORDER_WIDTH=2
 BORDER_COLOR=0xff282828
 
-if [ "$SELECTED" = "true" ]; then
+if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
+  SELECTED="true"
   COLOR="0xfffabd2f"
   BORDER_COLOR="0xfffabd2f"
   BORDER_WIDTH=2
+else
+  SELECTED="false"
 fi
 
 sketchybar --set $NAME icon.highlight=$SELECTED \

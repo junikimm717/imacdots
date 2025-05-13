@@ -5,18 +5,4 @@ if ! test -z "$MODE"; then
   exit
 fi
 
-LABEL=""
-
-case "$(yabai -m query --spaces --space | jq '.type')" in
-  '"bsp"')
-    LABEL="bsp"
-  ;;
-  '"float"')
-    LABEL="float"
-  ;;
-  '"stack"')
-    LABEL="stack"
-  ;;
-esac
-
-sketchybar --set $NAME label="$LABEL"
+sketchybar --set $NAME label="tiling"
