@@ -170,10 +170,17 @@ automatically-unhide-macos-hidden-apps = false
     run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
+    if.app-id = 'dev.kdrag0n.MacVirt'
+    run = 'move-node-to-workspace 3'
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.VSCode'
+    run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
     if.app-id = 'com.zoom.video'
     run = 'move-node-to-workspace 4'
 [[on-window-detected]]
-    if.app-name-regex-substring = '^Slack$'
+    if.app-id = 'com.tinyspeck.slackmacgap'
     run = 'move-node-to-workspace 4'
 [[on-window-detected]]
     if.app-name-regex-substring = 'zoom'
