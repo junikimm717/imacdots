@@ -9,6 +9,12 @@ ${ASDF_DATA_DIR:-$HOME/.asdf}/shims\
 setopt autocd
 export ZVM_CURSOR_STYLE_ENABLED=false
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+zvm_after_init() {
+  bindkey -M viins '^F' undefined-key
+  bindkey -s '^F' 'tmuxs -d 3\n'
+}
+
 # worksapces variable for tmuxs to read in
 export WORKSPACES="\
 $HOME/mit/s2:\
@@ -16,7 +22,6 @@ $HOME/Documents/proj:\
 $HOME/Documents/work:\
 $HOME/.config/nvim:\
 "
-bindkey -s "^t" "tmuxs -d 3\n"
 
 # =============================================
 # Random Convenient Configurations
@@ -76,6 +81,5 @@ zstyle ':completion:*' menu select=2
 autoload -U promptinit; promptinit
 prompt pure
 
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
