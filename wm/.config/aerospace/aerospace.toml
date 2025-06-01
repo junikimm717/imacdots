@@ -189,6 +189,9 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-name-regex-substring = 'UTM'
     run = ['layout floating', 'move-node-to-workspace 5']
+[[on-window-detected]]
+    if.app-name-regex-substring = 'qemu'
+    run = ['layout floating', 'move-node-to-workspace 5']
 
 [[on-window-detected]]
     if.app-id = 'com.electron.youtube-music-desktop-app'
@@ -197,6 +200,10 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-name-regex-substring = '^System Settings$'
     run = ['layout floating', 'move-node-to-workspace 7']
+
+[[on-window-detected]]
+    if.app-name-regex-substring = '^Discord$'
+    run = 'move-node-to-workspace 8'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
